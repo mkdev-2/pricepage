@@ -397,12 +397,50 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('#cart-checkout')) {
     const isYearly = document.getElementById('billing-toggle')?.checked;
     const billingCycle = isYearly ? 'Anual' : 'Mensal';
-    let message = `Olá! Gostaria de contratar a Loc10:\n\n`;
-    if (cartState.plan) message += `📦 *Plano:* ${cartState.plan.name} (${billingCycle})\n`;
-    if (cartState.resources.length > 0) {
-      message += `➕ *Recursos:*\n`;
-      cartState.resources.forEach(r => message += ` - ${r.name}${r.qty > 1 ? ` (${r.qty}x)` : ''}\n`);
+
+    // Calculate total
+    let total = 0;
+    if (cartState.plan) {
+      total += isYearly ? cartState.plan.yearly : cartState.plan.monthly;
     }
+    cartState.resources.forEach(r => {
+      total += r.price * (r.qty || 1);
+    });
+
+    let message = `Ola! Tenho interesse em contratar a *Loc10*.\n`;
+    message += `Segue o resumo do meu pedido:\n`;
+    message += `\n`;
+    message += `------------------------------\n`;
+
+    if (cartState.plan) {
+      const planPrice = isYearly ? cartState.plan.yearly : cartState.plan.monthly;
+      message += `\n`;
+      message += `*Plano:* ${cartState.plan.name}\n`;
+      message += `*Ciclo:* ${billingCycle}\n`;
+      message += `*Valor:* R$ ${planPrice.toFixed(2)}/mes\n`;
+    }
+
+    if (cartState.resources.length > 0) {
+      message += `\n`;
+      message += `*Recursos adicionais:*\n`;
+      cartState.resources.forEach(r => {
+        const qty = r.qty || 1;
+        const subtotal = r.price * qty;
+        if (qty > 1) {
+          message += `  - ${r.name} (${qty}x) - R$ ${subtotal.toFixed(2)}/mes\n`;
+        } else {
+          message += `  - ${r.name} - R$ ${r.price.toFixed(2)}/mes\n`;
+        }
+      });
+    }
+
+    message += `\n`;
+    message += `------------------------------\n`;
+    message += `*Total estimado:* R$ ${total.toFixed(2)}/mes\n`;
+    message += `------------------------------\n`;
+    message += `\n`;
+    message += `Aguardo retorno para prosseguir!`;
+
     const phone = "5598999627641";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   }
