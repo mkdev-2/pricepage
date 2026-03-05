@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loc10 | Planos e Preços</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <span class="loc">LOC</span><span class="ten">10</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#addons">Recursos</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#planos" class="btn-primary-sm">Começar Grátis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Tecnologia robusta para <span>empresas de locação modernas.</span></h1>
+          <p>Potencialize sua gestão com uma plataforma pensada na eficiência operacional, do controle de estoque ao
+            faturamento recorrente.</p>
+          <div class="hero-btns">
+            <a href="#planos" class="btn-primary btn-lg">Explorar Planos</a>
+            <a href="https://wa.me/55..." class="btn-outline btn-lg">Falar com Consultor</a>
+          </div>
+          <div class="hero-trust">
+            <p><i data-lucide="shield-check"></i> Teste grátis por 14 dias. Sem cartão de crédito.</p>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <img src="/hero-dashboard.png" alt="Loc10 Dashboard Mockup" class="hero-mockup">
+            <div class="hero-blob"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2>Transparência no Crescimento</h2>
+        <p>Soluções pensadas para cada estágio da sua locadora, sem letras miúdas.</p>
+      </div>
+
+      <div class="billing-toggle-container">
+        <span class="toggle-label mensal active">Mensal</span>
+        <label class="switch">
+          <input type="checkbox" id="billing-toggle">
+          <span class="slider-toggle round"></span>
+        </label>
+        <span class="toggle-label anual">Anual <span class="discount-badge">Economia de 20%</span></span>
+      </div>
+
+      <div class="slider-wrapper">
+        <button class="slider-btn prev" aria-label="Anterior">&#10094;</button>
+        <div class="pricing-slider">
+          <div class="pricing-grid">
+            <!-- START -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Starter</h3>
+                <div class="price" data-monthly="97" data-yearly="77">R$ <span>97</span><small>/mês</small></div>
+                <p>O pontapé inicial para organizar seu negócio de locação.</p>
+              </div>
+              <ul class="features">
+                <li><i data-lucide="user"></i> 1 usuário</li>
+                <li><i data-lucide="users"></i> Cadastro básico de clientes</li>
+                <li><i data-lucide="package"></i> Catálogo de produtos</li>
+                <li><i data-lucide="file-text"></i> Orçamentos em PDF</li>
+              </ul>
+              <a href="#" class="btn-details" data-plan="start">Detalhes técnicos</a>
+              <a href="#" class="btn-outline block btn-select-plan" data-plan-id="starter">Contratar Starter</a>
+            </div>
+
+            <!-- ESSENCIAL -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Essencial</h3>
+                <div class="price" data-monthly="197" data-yearly="157">R$ <span>197</span><small>/mês</small></div>
+                <p>Gestão de CRM e múltiplos contatos.</p>
+              </div>
+              <ul class="features">
+                <li><i data-lucide="users-2"></i> Até 2 usuários</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Tudo do Starter</strong></li>
+                <li><i data-lucide="contact-2"></i> Cadastro multi-contatos</li>
+                <li><i data-lucide="warehouse"></i> Gestão de depósito central</li>
+                <li><i data-lucide="history"></i> Histórico de atividades</li>
+              </ul>
+              <a href="#" class="btn-details" data-plan="essencial">Detalhes técnicos</a>
+              <a href="#" class="btn-outline block btn-select-plan" data-plan-id="essencial">Contratar Essencial</a>
+            </div>
+
+            <!-- GESTÃO -->
+            <div class="card featured">
+              <div class="card-header">
+                <span class="popular-badge">Mais Escalável</span>
+                <h3>Gestão</h3>
+                <div class="price" data-monthly="347" data-yearly="277">R$ <span>347</span><small>/mês</small></div>
+                <p>Controle financeiro e contratos inteligentes.</p>
+              </div>
+              <ul class="features">
+                <li><i data-lucide="users"></i> Até 5 usuários</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Tudo do Essencial</strong></li>
+                <li><i data-lucide="repeat"></i> Faturamento recorrente</li>
+                <li><i data-lucide="banknote"></i> Fluxo de caixa completo</li>
+                <li><i data-lucide="layout-grid"></i> Segmentação de clientes</li>
+              </ul>
+              <a href="#" class="btn-details" data-plan="gestao">Detalhes técnicos</a>
+              <a href="#" class="btn-primary block btn-select-plan" data-plan-id="gestao">Contratar Gestão</a>
+            </div>
+
+            <!-- LOGÍSTICA -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Logística</h3>
+                <div class="price" data-monthly="597" data-yearly="477">R$ <span>597</span><small>/mês</small></div>
+                <p>Domínio total da operação de campo.</p>
+              </div>
+              <ul class="features">
+                <li><i data-lucide="shield-check"></i> Até 10 usuários</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Tudo da Gestão</strong></li>
+                <li><i data-lucide="calendar"></i> Agenda logística visual</li>
+                <li><i data-lucide="clipboard-list"></i> Ordem de serviço (OS)</li>
+                <li><i data-lucide="barcode"></i> Rastreio por serial</li>
+              </ul>
+              <a href="#" class="btn-details" data-plan="logistica">Detalhes técnicos</a>
+              <a href="#" class="btn-outline block btn-select-plan" data-plan-id="logistica">Contratar Logística</a>
+            </div>
+
+            <!-- MASTER -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Master</h3>
+                <div class="price" data-monthly="997" data-yearly="797">R$ <span>997</span><small>/mês</small></div>
+                <p>Automação e escala regional para grandes operações.</p>
+              </div>
+              <ul class="features">
+                <li><i data-lucide="shield-check"></i> Até 20 usuários</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Tudo da Logística</strong></li>
+                <li><i data-lucide="zap"></i> Aceite online automático</li>
+                <li><i data-lucide="trending-up"></i> Gestão de rentabilidade</li>
+                <li><i data-lucide="boxes"></i> Composição de kits/combos</li>
+              </ul>
+              <a href="#" class="btn-details" data-plan="master">Detalhes técnicos</a>
+              <a href="#" class="btn-outline block btn-select-plan" data-plan-id="master">Contratar Master</a>
+            </div>
+
+            <!-- ENTERPRISE -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Enterprise</h3>
+                <div class="price">Consultar</div>
+                <p>Para grandes grupos, holdings e franquias.</p>
+              </div>
+              <ul class="features">
+                <li><i data-lucide="building-2"></i> Usuários ilimitados</li>
+                <li><i data-lucide="check-circle-2"></i> <strong>Tudo do Master</strong></li>
+                <li><i data-lucide="layers"></i> Estrutura multi-empresa</li>
+                <li><i data-lucide="pie-chart"></i> BI e dashboards avançados</li>
+                <li><i data-lucide="code-2"></i> API de integração completa</li>
+              </ul>
+              <a href="#" class="btn-details" data-plan="enterprise">Detalhes técnicos</a>
+              <a href="#" class="btn-secondary block">Falar com consultor</a>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn next" aria-label="Próximo">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="addons" class="addons">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recursos Adicionais</h2>
+        <p>Turbine seu plano com módulos avulsos.</p>
+      </div>
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-icon"><i data-lucide="messages-square"></i></div>
+          <h3>WhatsApp Cloud</h3>
+          <p>Envio oficial de orçamentos e contratos via API.</p>
+          <div class="addon-price">R$ 99<span>/mês</span></div>
+          <a href="#" class="btn-outline btn-add-resource" data-resource-id="whatsapp" data-price="99">Adicionar
+            Recurso</a>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><i data-lucide="user-plus"></i></div>
+          <h3>Usuário Extra</h3>
+          <p>Adicione mais membros à sua equipe operacional.</p>
+          <div class="addon-price">R$ 49<span>/mês</span></div>
+          <div class="addon-qty-selector" id="qty-user-extra" style="display: none;">
+            <button class="qty-btn minus" data-action="decrease"><i data-lucide="minus"></i></button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn plus" data-action="increase"><i data-lucide="plus"></i></button>
+          </div>
+          <a href="#" class="btn-outline btn-add-resource" data-resource-id="user-extra" data-price="49">Adicionar
+            Recurso</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Dúvidas Frequentes</h2>
+        <p>Tudo o que você precisa saber para escalar sua operação com segurança.</p>
+      </div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Como funciona a migração de dados?</h4>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Nossa equipe de especialistas auxilia na importação do seu estoque, clientes e contratos ativos,
+              garantindo que sua operação não pare durante a transição.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Posso mudar de plano a qualquer momento?</h4>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Sim, você tem total flexibilidade para fazer upgrade ou downgrade conforme a demanda do seu negócio
+              cresce ou flutua.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>O que acontece se eu exceder o limite de usuários?</h4>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Você pode adicionar usuários avulsos por R$ 49/mês cada ou migrar para o próximo nível de plano que
+              ofereça mais recursos e usuários base.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>Existe custo de implantação?</h4>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Oferecemos pacotes de treinamento e consultoria personalizados para cada plano (exceto Starter),
+              garantindo que sua equipe extraia o máximo da plataforma desde o primeiro dia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="loc">LOC</span><span class="ten">10</span>
+        </div>
+        <p>Tecnologia robusta e eficiente para empresas de locação que buscam escala e controle total.</p>
+        <div class="social-links">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="linkedin"></i></a>
+          <a href="#"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#addons">Recursos</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Roadmap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="#">Central de Ajuda</a></li>
+          <li><a href="#">Status do Sistema</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <p><i data-lucide="mail"></i> contato@loc10.com.br</p>
+        <p><i data-lucide="phone"></i> 0800 123 4567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Loc10 - Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Plan Details -->
+  <div id="plan-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modal-body">
+        <!-- Content will be injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Cart -->
+  <div id="floating-cart" class="floating-cart">
+    <div class="cart-inner">
+      <div class="cart-info">
+        <div class="cart-count">0</div>
+        <div class="cart-text">
+          <span class="cart-items-summary">Selecionar itens...</span>
+          <span class="cart-total-price">R$ 0,00/mês</span>
+        </div>
+      </div>
+      <button id="cart-checkout" class="btn-primary-sm">Finalizar Pedido</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
