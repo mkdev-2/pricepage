@@ -382,7 +382,7 @@ document.addEventListener('click', (e) => {
       message += `➕ *Recursos:*\n`;
       cartState.resources.forEach(r => message += ` - ${r.name}${r.qty > 1 ? ` (${r.qty}x)` : ''}\n`);
     }
-    const phone = "5511999999999";
+    const phone = "5598999627641";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   }
 });
