@@ -17,8 +17,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     } catch (err) {
       console.error('Erro ao rolar para o alvo:', err);
     }
+
+    // Close mobile menu on link click
+    const nav = document.getElementById('main-nav');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    if (nav && menuBtn) {
+      nav.classList.remove('open');
+      menuBtn.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
   });
 });
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mainNav = document.getElementById('main-nav');
+
+if (mobileMenuBtn && mainNav) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('open');
+    mainNav.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+}
 
 // Billing Toggle Logic
 const billingToggle = document.getElementById('billing-toggle');
