@@ -131,35 +131,99 @@ window.addEventListener('scroll', () => {
 const planDetails = {
   start: {
     name: "Loc10 START",
-    desc: "Ideal para quem está migrando das planilhas para a automação básica.",
-    features: ["Cadastro de Clientes PF e PJ", "Gestão de Catálogo de Produtos e Serviços", "Controle de Estoque", "Emissão de Orçamentos em PDF", "Acesso exclusivo para 1 usuário", "Suporte via Central de Ajuda"]
+    desc: "Ideal para micro-locadores que estão organizando a operação básica.",
+    features: [
+      "Cadastro de Clientes PF e PJ",
+      "Gestão de Catálogo de Produtos e Serviços",
+      "Controle de Estoque unitário simples",
+      "Emissão de Orçamentos em PDF",
+      "Acesso exclusivo para 1 usuário",
+      "Suporte via Central de Ajuda"
+    ]
   },
   essencial: {
     name: "Loc10 ESSENCIAL",
-    desc: "Para empresas de locação que precisam de CRM e histórico comercial.",
-    features: ["Tudo do Plano START", "Até 2 usuários simultâneos", "Gestão de Depósito (1 unidade)", "Histórico completo de Atividades", "Multi-contatos por cliente", "Endereços de entrega ilimitados"]
+    desc: "Para empresas que precisam de CRM e histórico comercial detalhado.",
+    features: [
+      "Tudo do Plano START",
+      "Até 2 usuários simultâneos",
+      "Multi-contatos por cliente",
+      "Gestão de Depósito (1 unidade)",
+      "Histórico completo de Atividades",
+      "Endereços de entrega ilimitados"
+    ]
   },
   gestao: {
     name: "Loc10 GESTÃO",
     desc: "Foco total no controle financeiro e faturamento recorrente.",
-    features: ["Tudo do Plano ESSENCIAL", "Até 5 usuários", "Gestão Formal de Contratos", "Faturamento Recorrente Automático", "Fluxo de Caixa (Pagar/Receber)", "Alertas de Vencimento e Vigência", "Relatórios Financeiros Básicos"]
+    features: [
+      "Tudo do Plano ESSENCIAL",
+      "Até 5 usuários simultâneos",
+      "Fluxo de Caixa (Pagar/Receber)",
+      "Relatórios Financeiros Básicos",
+      "Gestão Formal de Contratos",
+      "Alertas de Vencimento e Vigência",
+      "Faturamento Recorrente Automático"
+    ]
   },
   logistica: {
     name: "Loc10 LOGÍSTICA",
-    desc: "Domine a operação de campo, entregas e devoluções.",
-    features: ["Tudo do Plano GESTÃO", "Até 10 usuários e 2 Depósitos", "Agenda Logística Visual", "Emissão de Ordens de Serviço (OS)", "Conferência Express (Checklist)", "Assinatura Digital no ato da entrega via Mobile", "Tombamento (Número de Série)", "Notas de Remessa Operacional"]
+    desc: "Domine a operação de campo, entregas e devoluções em tempo real.",
+    features: [
+      "Tudo do Plano GESTÃO",
+      "Até 10 usuários e 2 Depósitos",
+      "Agenda Logística Visual",
+      "Emissão de Ordens de Serviço (OS)",
+      "Assinatura Digital via Mobile",
+      "Tombamento (Número de Série)",
+      "Conferência Express (Checklist)",
+      "Notas de Remessa Operacional"
+    ]
   },
   master: {
     name: "Loc10 MASTER",
-    desc: "Acelere suas vendas com automação e portal do cliente.",
-    features: ["Tudo do Plano LOGÍSTICA", "Até 20 usuários e 5 Depósitos", "Portal Público para Aceite Online", "CRM com Funil de Vendas", "Kits e Combos Dinâmicos", "Gestão de Rentabilidade e Comissões", "Controle de Sublocação (Parceiros)", "Renovação Automática de Contratos"]
+    desc: "Acelere suas vendas com automação, portal e inteligência comercial.",
+    features: [
+      "Tudo do Plano LOGÍSTICA",
+      "Até 20 usuários e 5 Depósitos",
+      "Portal Público para Aceite Online",
+      "Kits e Combos Dinâmicos",
+      "CRM com Funil de Vendas",
+      "Gestão de Rentabilidade e Comissões",
+      "Controle de Sublocação (Parceiros)",
+      "Renovação Automática de Contratos"
+    ]
   },
   enterprise: {
     name: "Loc10 ENTERPRISE",
-    desc: "Potência máxima para grandes grupos e holdings.",
-    features: ["Tudo do Plano MASTER", "Usuários e Depósitos ILIMITADOS", "Estrutura Multi-Empresa (Holding)", "Tabela de Preço por Cliente", "BI e Dashboards Avançados", "Acesso via API e Webhooks", "Suporte Prioritário 24/7", "Gerente de Conta Dedicado"]
+    desc: "Potência máxima para grandes grupos, holdings e franquias.",
+    features: [
+      "Tudo do Plano MASTER",
+      "Usuários e Depósitos ILIMITADOS",
+      "Estrutura Multi-Empresa (Holding)",
+      "Tabela de Preço por Cliente",
+      "BI e Dashboards Avançados",
+      "Acesso via API e Webhooks",
+      "Suporte Prioritário 24/7",
+      "Gerente de Conta Dedicado"
+    ]
   }
 };
+
+const developedFeatures = [
+  "Cadastro de Clientes PF e PJ",
+  "Gestão de Catálogo de Produtos e Serviços",
+  "Controle de Estoque unitário simples",
+  "Emissão de Orçamentos em PDF",
+  "Acesso exclusivo para 1 usuário",
+  "Multi-contatos por cliente",
+  "Fluxo de Caixa (Pagar/Receber)",
+  "Relatórios Financeiros Básicos",
+  "Agenda Logística Visual",
+  "Emissão de Ordens de Serviço (OS)",
+  "Assinatura Digital via Mobile",
+  "Tombamento (Número de Série)"
+];
 
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.btn-details');
@@ -173,15 +237,21 @@ document.addEventListener('click', (e) => {
     const data = planDetails[planKey];
     if (data) {
       modalBody.innerHTML = `
-          <h2>${data.name}</h2>
-          <p>${data.desc}</p>
-          <ul class="detail-list" style="list-style: none; padding: 0;">
-              ${data.features.map(f => `
-                  <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: center;">
-                      <span style="color: #fa8c16; margin-right: 12px;">✔</span> ${f}
-                  </li>
-              `).join('')}
-          </ul>
+          <div class="modal-header-content">
+            <h2>${data.name}</h2>
+            <p>${data.desc}</p>
+          </div>
+          <div class="features-grid-modal">
+              ${data.features.map(f => {
+        const isDeveloped = developedFeatures.includes(f) || f.startsWith("Até") || f.startsWith("Tudo") || f.includes("ILIMITADOS");
+        return `
+                  <div class="feature-item-modal ${isDeveloped ? 'developed' : 'pending'}">
+                    <span class="feature-icon">${isDeveloped ? '✓' : '•'}</span>
+                    <span class="feature-text">${f} ${isDeveloped ? '' : '<span class="tag-pending">Breve</span>'}</span>
+                  </div>
+                `;
+      }).join('')}
+          </div>
         `;
       modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
