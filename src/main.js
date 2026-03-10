@@ -148,7 +148,7 @@ const planDetails = {
       "Tudo do Plano START",
       "Até 2 usuários simultâneos",
       "Multi-contatos por cliente",
-      "Gestão de Depósito (1 unidade)",
+      "Gestão de Unidade de Estoque (1 local)",
       "Histórico completo de Atividades",
       "Endereços de entrega ilimitados"
     ]
@@ -171,7 +171,7 @@ const planDetails = {
     desc: "Domine a operação de campo, entregas e devoluções em tempo real.",
     features: [
       "Tudo do Plano GESTÃO",
-      "Até 10 usuários e 2 Depósitos",
+      "Até 10 usuários e 2 Unidades de Estoque",
       "Agenda Logística Visual",
       "Emissão de Ordens de Serviço (OS)",
       "Assinatura Digital via Mobile",
@@ -185,7 +185,7 @@ const planDetails = {
     desc: "Acelere suas vendas com automação, portal e inteligência comercial.",
     features: [
       "Tudo do Plano LOGÍSTICA",
-      "Até 20 usuários e 5 Depósitos",
+      "Até 20 usuários e 5 Unidades de Estoque",
       "Portal Público para Aceite Online",
       "Kits e Combos Dinâmicos",
       "CRM com Funil de Vendas",
@@ -199,7 +199,7 @@ const planDetails = {
     desc: "Potência máxima para grandes grupos, holdings e franquias.",
     features: [
       "Tudo do Plano MASTER",
-      "Usuários e Depósitos ILIMITADOS",
+      "Usuários e Unidades de Estoque ILIMITADOS",
       "Estrutura Multi-Empresa (Holding)",
       "Tabela de Preço por Cliente",
       "BI e Dashboards Avançados",
@@ -268,8 +268,39 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Carousel Slider Logic
+// Enhanced CAROUSEL & GRID LOGIC
 const slider = document.querySelector('.pricing-slider');
+const dotsContainer = document.querySelector('.slider-dots');
+const CARDS_PER_VIEW = 1; // Used for dots calculation on mobile
+
+if (slider && dotsContainer) {
+  const cards = slider.querySelectorAll('.card');
+
+  // Create Dots based on number of cards
+  cards.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      const cardWidth = slider.querySelector('.card').offsetWidth + 30;
+      slider.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Update active dot on scroll
+  slider.addEventListener('scroll', () => {
+    const scrollLeft = slider.scrollLeft;
+    const cardWidth = slider.querySelector('.card').offsetWidth + 30;
+    const activeIndex = Math.round(scrollLeft / cardWidth);
+
+    document.querySelectorAll('.dot').forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === activeIndex);
+    });
+  });
+}
+
+// Slider Desktop Buttons (still present in HTML but may be hidden by media query)
 const prevBtn = document.querySelector('.slider-btn.prev');
 const nextBtn = document.querySelector('.slider-btn.next');
 

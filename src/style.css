@@ -1630,3 +1630,112 @@ body.menu-open {
     font-weight: 700;
     text-transform: uppercase;
 }
+
+/* RESPONSIVE PRICING GRID & CAROUSEL IMPROVEMENTS */
+
+/* Slider Dots */
+.slider-dots {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e4e4e7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary);
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* Desktop Grid View */
+@media (min-width: 1024px) {
+    .slider-wrapper {
+        padding: 0;
+    }
+
+    .slider-btn {
+        display: none !important;
+    }
+
+    .pricing-slider {
+        overflow: visible;
+        padding: 40px 0;
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        row-gap: 48px;
+    }
+
+    .card {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Manter destaque do Featured mesmo no Grid */
+    .card.featured {
+        transform: scale(1.05);
+    }
+    
+    .card.featured:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+}
+
+/* Tablet / Small Desktop Grid */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .slider-btn, .slider-wrapper {
+        padding: 0;
+    }
+    
+    .slider-btn {
+        display: none !important;
+    }
+    
+    .pricing-slider {
+        overflow: visible;
+    }
+    
+    .card {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Mobile Carousel Specifics */
+@media (max-width: 767px) {
+    .slider-dots {
+        display: flex;
+    }
+    
+    .pricing-slider {
+        padding-bottom: 20px;
+        /* "Peeking" effect: mostra um pouco do proximo card */
+        margin-right: -20px; 
+    }
+    
+    .card {
+        flex: 0 0 85%; /* Deixa 15% para o proximo card aparecer */
+    }
+    
+    .slider-btn {
+        display: none !important; /* Em mobile o swipe é mais natural que setas */
+    }
+}
