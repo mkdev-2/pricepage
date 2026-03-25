@@ -150,7 +150,8 @@ const planDetails = {
       "Multi-contatos por cliente",
       "Gestão de Unidade de Estoque (1 local)",
       "Histórico completo de Atividades",
-      "Endereços de entrega ilimitados"
+      "Endereços de entrega ilimitados",
+      "Livro Caixa (Lançamentos do dia)"
     ]
   },
   gestao: {
@@ -222,7 +223,8 @@ const developedFeatures = [
   "Agenda Logística Visual",
   "Emissão de Ordens de Serviço (OS)",
   "Assinatura Digital via Mobile",
-  "Tombamento (Número de Série)"
+  "Tombamento (Número de Série)",
+  "Livro Caixa (Lançamentos do dia)"
 ];
 
 document.addEventListener('click', (e) => {
